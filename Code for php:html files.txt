@@ -1,0 +1,26 @@
+718A71
+
+389C38 green
+
+CC0E0E red
+
+
+<span style="color:#CC0E0E";<?php if($variable>67.55)echo "color:#389C38"?>"><?php echo $variable; ?></span>
+
+style="color:#CC0E0E;" <?php if($variable == 0){echo "font-color:#389C38;"} ?>
+            <?php echo $variable; } ?>
+
+
+
+
+https://www.paypal.com/en_US/i/btn/x-click-but21.gif
+
+
+
+
+
+http://www.xtremekillerz.com/images/paypal_donate_button.png
+120x30
+
+http://www.xtremekillerz.com/images/paypal_button2.png
+98x31

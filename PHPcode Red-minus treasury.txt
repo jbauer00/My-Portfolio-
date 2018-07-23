@@ -1,0 +1,40 @@
+
+Current code to get currency value to show "Left to go"
+$DM_LEFT = sprintf('$%.02f', $row_Recordset1['net'] - $row_Recordset2['value']);
+
+
+Added Code to change color red for negative not met goal..green for positive met goal!
+**Notice that "$0" in the if statement to call for currency value!!
+original code had 0 instead of "$0" and just zero calls a plain number NOT currency!!!
+
+if($DM_LEFT <= "$0") $DM_COLOR ='red';
+else $DM_COLOR = '#389C38';
+
+Setting $DM_COLOR value(call) in php code i.e. $DM_COLOR = 'red' $DM_COLOR = 'green' 
+2 colors for same value(call) you NEED to use IF and ELSE statement!!!!
+
+Then add "style" code to html element that you want to apply $DM_COLOR!!!
+$DM_COLOR becomes a value used in a style attribute in html!!!
+
+ie 
+
+<tr class="bold" style="color:$DM_COLOR;">
+	<td width="65%" align="left">Left to go:</td>
+        <td align="left">$DM_LEFT</td>
+</tr>
+
+CHANGED TEXT based on $0 dollar amount of $DM_LEFT
+
+if($DM_LEFT <= "$0") $content .= "Left to go:";
+    else $content .= "Goal Met! Thanks!";
+
+If/else statement defining text.. to set text as a called value i.e. $DM_LEFT
+text in PHP is $content .= "something"
+
+Then set text in html element i.e. <p>$content</p> 
+or in our example
+<td>left to go:</td> to <td>$content</td> and $content was defined in PHP code above
+$content is called and = "Left to go:" to display in the html element
+
+if/else sets $content to display "Left to go:" if $DM_LEFT <= "$0" and 
+else sets $content to display "Goal Met! Thanks!" if $DM_LEFT isn't less than "$0"
